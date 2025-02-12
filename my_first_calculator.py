@@ -61,3 +61,11 @@ while True:
     print(f"Result: {result}")
 
     save_history(num1, sign, num2, result)
+
+    showing_history = input('Показать историю? (y/n): ')
+    if view_history.lower() == 'y':
+        show_history()
+    else:
+        print("End")
+
+print("Thanks for using this calculator, goodbye :)")
