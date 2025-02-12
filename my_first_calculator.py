@@ -90,7 +90,8 @@ while True:
     print("\nВыберите тип операции:")
     print("1. Обычные")
     print("2. Матрицы")
-    print("3. Exit")
+    print("3. История операций")
+    print("4. Exit")
 
     choice = input("Номер операции: ")
 
@@ -140,6 +141,7 @@ while True:
             if result:
                 print("Result:")
                 print_matrix(result)
+                save_history(f"Сложение матриц:\n{matrix1}\n+\n{matrix2}\n=\n{result}")
 
         elif matrix_choice == '2':
             print("First matrix:")
@@ -151,13 +153,24 @@ while True:
             if result:
                 print("Result:")
                 print_matrix(result)
+                save_history(f"Вычитание матриц:\n{matrix1}\n-\n{matrix2}\n=\n{result}")
+
+        elif matrix_choice == '3':
+            print("First matrix:")
+            matrix1 = get_matrix_input()
+            print("Second matrix:")
+            matrix2 = get_matrix_input()
+
+            result = multiply_matrices(matrix1, matrix2)
+            if result:
+                print("Result:")
+                print_matrix(result)
+                save_history(f"Умножение матриц:\n{matrix1}\n*\n{matrix2}\n=\n{result}")
 
 
-
-    showing_history = input('Показать историю? (y/n): ')
-    if view_history.lower() == 'y':
+    elif choice == '3':
         show_history()
-    else:
-        print("End")
 
-print("Thanks for using this calculator, goodbye :)")
+    elif choice == '4':
+        print("Thanks for using this calculator, goodbye :)")
+        break
