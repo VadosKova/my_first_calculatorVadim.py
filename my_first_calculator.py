@@ -42,6 +42,19 @@ def print_matrix(matrix):
     for row in matrix:
         print(" ".join(map(str, row)))
 
+def add_matrices(matrix1, matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        print("Error")
+        return None
+
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j] + matrix2[i][j])
+        result.append(row)
+    return result
+
 
 print('Welcome to this calculator!')
 print('It can add, subtract, multiply and divide whole numbers from 0 to 50')
