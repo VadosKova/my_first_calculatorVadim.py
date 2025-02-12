@@ -68,6 +68,19 @@ def subtract_matrices(matrix1, matrix2):
         result.append(row)
     return result
 
+def multiply_matrices(matrix1, matrix2):
+    if len(matrix1[0]) != len(matrix2):
+        print("Error")
+        return None
+
+    result = [[0 for _ in range(len(matrix2[0]))] for _ in range(len(matrix1))]
+
+    for i in range(len(matrix1)):
+        for j in range(len(matrix2[0])):
+            for k in range(len(matrix2)):
+                result[i][j] += matrix1[i][k] * matrix2[k][j]
+    return result
+
 print('Welcome to this calculator!')
 print('It can add, subtract, multiply and divide whole numbers from 0 to 50')
 
