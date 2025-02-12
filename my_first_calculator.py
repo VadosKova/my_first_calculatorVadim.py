@@ -141,6 +141,19 @@ while True:
                 print("Result:")
                 print_matrix(result)
 
+        elif matrix_choice == '2':
+            print("First matrix:")
+            matrix1 = get_matrix_input()
+            print("Second matrix:")
+            matrix2 = get_matrix_input()
+
+            result = subtract_matrices(matrix1, matrix2)
+            if result:
+                print("Result:")
+                print_matrix(result)
+
+
+
     showing_history = input('Показать историю? (y/n): ')
     if view_history.lower() == 'y':
         show_history()
