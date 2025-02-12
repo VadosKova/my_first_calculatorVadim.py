@@ -38,6 +38,10 @@ def get_matrix_input():
         matrix.append(row)
     return matrix
 
+def print_matrix(matrix):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
 
 print('Welcome to this calculator!')
 print('It can add, subtract, multiply and divide whole numbers from 0 to 50')
