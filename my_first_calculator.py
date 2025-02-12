@@ -29,12 +29,21 @@ def show_history():
         print("Empty")
 
 
+
+
 print('Welcome to this calculator!')
 print('It can add, subtract, multiply and divide whole numbers from 0 to 50')
 
 history = load_history()
 
 while True:
+    print("\nВыберите тип операции:")
+    print("1. Обычные")
+    print("2. Матрицами")
+    print("3. Exit")
+
+    choice = input("Введите номер операции: ")
+
     num1 = int(input('Please choose your first number: '))
 
     if num1 == -1:
