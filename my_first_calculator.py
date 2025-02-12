@@ -39,37 +39,48 @@ history = load_history()
 while True:
     print("\nВыберите тип операции:")
     print("1. Обычные")
-    print("2. Матрицами")
+    print("2. Матрицы")
     print("3. Exit")
 
-    choice = input("Введите номер операции: ")
+    choice = input("Номер операции: ")
 
-    num1 = int(input('Please choose your first number: '))
+    if choice == '1':
+        num1 = int(input('Please choose your first number: '))
 
-    if num1 == -1:
-        break
+        if num1 == -1:
+            break
 
-    sign = input('What do you want to do? +, -, /, or *: ')
-    num2 = int(input('Please choose your second number: '))
+        sign = input('What do you want to do? +, -, /, or *: ')
+        num2 = int(input('Please choose your second number: '))
 
-    if sign == '+':
-        result = num1 + num2
-    elif sign == '-':
-        result = num1 - num2
-    elif sign == '*':
-        result = num1 * num2
-    elif sign == '/':
-        if num2 == 0:
+        if sign == '+':
+            result = num1 + num2
+        elif sign == '-':
+            result = num1 - num2
+        elif sign == '*':
+            result = num1 * num2
+        elif sign == '/':
+            if num2 == 0:
+                print("Error")
+                continue
+            result = num1 / num2
+        else:
             print("Error")
             continue
-        result = num1 / num2
-    else:
-        print("Error")
-        continue
 
-    print(f"Result: {result}")
+        print(f"Result: {result}")
 
-    save_history(num1, sign, num2, result)
+        save_history(num1, sign, num2, result)
+
+    elif choice == '2':
+        print("\nОперация:")
+        print("1. Сложение")
+        print("2. Вычитание")
+        print("3. Умножение")
+
+        matrix_choice = input("->: ")
+
+
 
     showing_history = input('Показать историю? (y/n): ')
     if view_history.lower() == 'y':
