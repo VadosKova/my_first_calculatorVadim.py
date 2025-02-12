@@ -59,3 +59,5 @@ while True:
         continue
 
     print(f"Result: {result}")
+
+    save_history(num1, sign, num2, result)
