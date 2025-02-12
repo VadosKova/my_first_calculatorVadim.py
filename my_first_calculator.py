@@ -130,7 +130,16 @@ while True:
 
         matrix_choice = input("->: ")
 
+        if matrix_choice == '1':
+            print("First matrix:")
+            matrix1 = get_matrix_input()
+            print("Second matrix:")
+            matrix2 = get_matrix_input()
 
+            result = add_matrices(matrix1, matrix2)
+            if result:
+                print("Result:")
+                print_matrix(result)
 
     showing_history = input('Показать историю? (y/n): ')
     if view_history.lower() == 'y':
