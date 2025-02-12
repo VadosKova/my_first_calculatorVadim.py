@@ -28,7 +28,15 @@ def show_history():
     else:
         print("Empty")
 
-
+def get_matrix_input():
+    rows = int(input("Количество строк: "))
+    cols = int(input("Количество столбцов: "))
+    matrix = []
+    print("Введите элементы матрицы (по строкам):")
+    for i in range(rows):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
 
 
 print('Welcome to this calculator!')
