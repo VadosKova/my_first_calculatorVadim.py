@@ -1,10 +1,19 @@
 # my_first_calculator.py by AceLewis
 # TODO: Make it work for all floating point numbers too
 
+import os
+
 if 3/2 == 1:  # Because Python 2 does not know maths
     input = raw_input  # Python 2 compatibility
 
 history = "history.txt"
+
+def load_history():
+    if os.path.exists(history_file):
+        with open(history_file, "r") as file:
+            history = file.readlines()
+        return [entry.strip() for entry in history]
+    return []
 
 print('Welcome to this calculator!')
 print('It can add, subtract, multiply and divide whole numbers from 0 to 50')
