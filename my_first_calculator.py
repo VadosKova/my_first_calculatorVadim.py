@@ -19,6 +19,15 @@ def save_history(num1, sign, num2, result):
     with open(history_file, "a") as file:
         file.write(f"{num1} {sign} {num2} = {result}\n")
 
+def show_history():
+    history = load_history()
+    print("\nИстория операций:")
+    if history:
+        for entry in history:
+            print(entry)
+    else:
+        print("Empty")
+
 
 print('Welcome to this calculator!')
 print('It can add, subtract, multiply and divide whole numbers from 0 to 50')
